@@ -22,9 +22,9 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">All</li>
-                        <li class="list-group-item">Portrait</li>
-                        <li class="list-group-item">Nature</li>
-                        <li class="list-group-item">Astrophotography</li>
+                        {% for category in categories %}
+                        <li class="list-group-item">{{ category.name }}</li>
+                        {% endfor %}
                         <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm">Add Photo</a>
                     </ul>
                 </div>
@@ -32,60 +32,24 @@
             </div>
             <div class="col-md-9">
                 <div class="row">
+                    {% for photo in photos %}
                     <div class="col-md-4">
                         <div class="card my-2">
-                            <img class="image-thumbnail" src="https://i.ibb.co/MPHhgfn/146793.jpg" alt="Card image cap">
+                            <img class="image-thumbnail" src="{{ photo.image.url }}" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text">Category: Nature</p>
+                                <p class="card-text">{{ photo.category }}</p>
                             </div>
-                            <a class="btn btn-outline-dark btn-sm m-1" href="{% url 'photo' 1 %}">View</a>
+                            <a class="btn btn-outline-dark btn-sm m-1" href="{% url 'photo' photo.id %}">View</a>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbnail" src="https://i.ibb.co/MPHhgfn/146793.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Category: Nature</p>
-                            </div>
-                            <a class="btn btn-outline-dark btn-sm m-1" href="{% url 'photo' 1 %}">View</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbnail" src="https://i.ibb.co/MPHhgfn/146793.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Category: Nature</p>
-                            </div>
-                            <a class="btn btn-outline-dark btn-sm m-1" href="{% url 'photo' 1 %}">View</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbnail" src="https://i.ibb.co/MPHhgfn/146793.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Category: Nature</p>
-                            </div>
-                            <a class="btn btn-outline-dark btn-sm m-1" href="{% url 'photo' 1 %}">View</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbnail" src="https://i.ibb.co/MPHhgfn/146793.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Category: Nature</p>
-                            </div>
-                            <a class="btn btn-outline-dark btn-sm m-1" href="{% url 'photo' 1 %}">View</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbnail" src="https://i.ibb.co/MPHhgfn/146793.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">Category: Nature</p>
-                            </div>
-                            <a class="btn btn-outline-dark btn-sm m-1" href="{% url 'photo' 1 %}">View</a>
-                        </div>
-                    </div>
+                    {% empty %}
+                    <h3>No Photos</h3>
+                    {% endfor %}
+                    
+                    
+                    
+                    
+                    
                 </div>
             </div>
 

@@ -18,8 +18,8 @@
             <div class="col">
                 <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go Back</a>
                 <div style="height: 90vh;">
-                    <img class="image-original" src="https://i.ibb.co/MPHhgfn/146793.jpg" alt="Card image cap">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam praesentium quibusdam quos nihil quia provident animi omnis harum error eius non illum cumque, nisi fugit dolor, molestias a delectus suscipit?</p>
+                    <img class="image-original" src="{{ photo.image.url }}" alt="Card image cap">
+                    <p class="mt-4">{{ photo.description }}</p>
                 </div>
             </div>
         </div>
