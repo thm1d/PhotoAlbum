@@ -125,7 +125,7 @@ MEDIA_URL = '/images/'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    'gs://photoalbum-b6500.appspot.com'
 ]
 
 MEDIA_ROOT = BASE_DIR / 'static/image'

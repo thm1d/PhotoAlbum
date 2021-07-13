@@ -9,3 +9,6 @@
     object-fit: cover;
 }
 
+.item {
+    text-decoration: none;
+}
